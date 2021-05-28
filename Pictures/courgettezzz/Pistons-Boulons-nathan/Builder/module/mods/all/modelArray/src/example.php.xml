@@ -1,0 +1,21 @@
+<main>
+	<patterns>
+		<pattern>#maTable#</pattern>
+		
+	</patterns>
+	<snippets>
+		<dataRow>
+			<patterns>
+				<pattern>#key#</pattern>
+				<pattern>#val#</pattern>
+			</patterns>
+			<code><![CDATA[
+				'#key#'=>'#val#',
+			]]></code>
+		</dataRow>
+
+
+
+	</snippets>
+	<target>model/model_#maTable#.php</target>
+</main>

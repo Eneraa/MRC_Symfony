@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<forms>
+
+	<step id="1">
+		<form>
+
+
+			<row name="moduleChild" required="true">
+				<label>moduleName</label>
+				<input type="input" value="webservice"/>
+			</row>
+
+			<row name="businessName" required="true">
+				<label>businessName</label>
+				<input type="input" value="businessName"/>
+			</row>
+
+			<row name="url" required="true">
+				<label>url</label>
+				<input type="input" value="http://monurl.com/webservice.php"/>
+			</row>
+
+		</form>
+	</step>
+
+	<step id="2">
+		<form>
+			<row name="actions" required="true">
+				<label>actions</label>
+				<input type="multiInput" value="" />
+			</row>
+
+
+		</form>
+	</step>
+
+	<step id="3">
+
+
+		<form>
+
+			<row type="html">
+				<html><![CDATA[
+
+					<table >
+						<tr>
+							<td style="font-weight:bold;width:120px">Types</td>
+							<td style="width:120px"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>string</td>
+
+							<td>int</td>
+
+							<td>boolean</td>
+						</tr>
+						<tr>
+							<td>decimal</td>
+
+							<td>float</td>
+
+							<td>double</td>
+						</tr>
+						<tr>
+							<td>time</td>
+
+							<td>date</td>
+
+							<td>base64Binary</td>
+						</tr>
+
+					</table>
+
+					<p>&nbsp;</p>
+
+					<p>*Syntax: param:type</p>
+					<p><u>Exemple:</u> login:string</p>
+					<p><u>Exemple avec plusieurs:</u> login:string,password:string</p>
+
+					]]></html>
+			</row>
+
+			<row type="loop" source="params" param="$actions" keyVar="i" valueVar="columnCurrent">
+				<col name="tMethod">
+					<label>method</label>
+					<input type="input" value="$columnCurrent"/>
+				</col>
+
+				<col name="tParam">
+					<label>params*</label>
+					<input type="textarea" value=""/>
+				</col>
+
+				<col name="tReturn">
+					<label>return*</label>
+					<input type="textarea" value=""/>
+				</col>
+
+			</row>
+
+
+		</form>
+	</step>
+
+
+
+
+
+</forms>
